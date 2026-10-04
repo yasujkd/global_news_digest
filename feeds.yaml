@@ -1,0 +1,85 @@
+# 海外ニュース朝刊ダイジェスト — 情報源リスト(すべて日本以外・無料RSS)
+# 行を追加/削除/コメントアウト(#)するだけで情報源を調整できます。
+# max: そのソースから載せる最大件数 / weight: 並び順の優先度(大きいほど上)
+
+window_hours: 26          # 火〜土の取得範囲(前回実行から少し重複を持たせる)
+monday_window_hours: 74   # 月曜は土曜朝以降をまとめて取得
+
+sections:
+  - id: us
+    title: "🇺🇸 米国経済"
+    feeds:
+      - {name: "Federal Reserve(FRB)", url: "https://www.federalreserve.gov/feeds/press_all.xml", max: 4, weight: 3}
+      - {name: "CNBC Economy", url: "https://www.cnbc.com/id/20910258/device/rss/rss.html", max: 6, weight: 2}
+      - {name: "MarketWatch Top Stories", url: "https://feeds.content.dowjones.io/public/rss/mw_topstories", max: 5, weight: 2}
+      - {name: "WSJ Markets", url: "https://feeds.a.dj.com/rss/RSSMarketsMain.xml", max: 5, weight: 2}
+
+  - id: eu
+    title: "🇪🇺 欧州経済"
+    feeds:
+      - {name: "ECB(欧州中央銀行)", url: "https://www.ecb.europa.eu/rss/press.html", max: 4, weight: 3}
+      - {name: "Bank of England", url: "https://www.bankofengland.co.uk/rss/news", max: 3, weight: 3}
+      - {name: "BBC Business", url: "https://feeds.bbci.co.uk/news/business/rss.xml", max: 6, weight: 2}
+      - {name: "The Guardian Economics", url: "https://www.theguardian.com/business/economics/rss", max: 5, weight: 2}
+      - {name: "FT World Economy(見出しのみ・本文有料)", url: "https://www.ft.com/world-economy?format=rss", max: 5, weight: 2}
+
+  - id: asia
+    title: "🌏 アジア経済"
+    feeds:
+      - {name: "SCMP Economy(香港)", url: "https://www.scmp.com/rss/92/feed", max: 6, weight: 2}
+      - {name: "CNA Business(シンガポール)", url: "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6936", max: 5, weight: 2}
+      - {name: "Economic Times Economy(インド)", url: "https://economictimes.indiatimes.com/news/economy/rssfeeds/1373380680.cms", max: 4, weight: 1}
+      - {name: "Hindu BusinessLine Economy(インド)", url: "https://www.thehindubusinessline.com/economy/feeder/default.rss", max: 3, weight: 1}
+
+  - id: me
+    title: "🕌 中東経済"
+    feeds:
+      - {name: "Al Jazeera(カタール)", url: "https://www.aljazeera.com/xml/rss/all.xml", max: 5, weight: 2,
+         keywords: ["econom", "oil", "opec", "gas", "market", "trade", "tariff", "bank", "inflation", "invest", "gdp", "price", "sanction", "budget", "stock", "currency"]}
+      - {name: "The National Business(UAE)", url: "https://www.thenationalnews.com/arc/outboundfeeds/rss/category/business/?outputType=xml", max: 5, weight: 2}
+      - {name: "Arab News(サウジ)", url: "https://www.arabnews.com/rss.xml", max: 4, weight: 1,
+         keywords: ["econom", "oil", "opec", "aramco", "market", "trade", "invest", "gdp", "bank", "pif", "vision 2030", "stock", "business"]}
+
+  - id: global
+    title: "🌐 国際マクロ・中央銀行"
+    feeds:
+      - {name: "BIS 中央銀行総裁スピーチ", url: "https://www.bis.org/doclist/cbspeeches.rss", max: 5, weight: 2}
+      - {name: "The Economist Finance & Economics", url: "https://www.economist.com/finance-and-economics/rss.xml", max: 4, weight: 2}
+
+  - id: ai
+    title: "🤖 AI(人工知能)"
+    feeds:
+      - {name: "MIT Technology Review AI", url: "https://www.technologyreview.com/topic/artificial-intelligence/feed", max: 4, weight: 3}
+      - {name: "OpenAI News", url: "https://openai.com/news/rss.xml", max: 3, weight: 3}
+      - {name: "Google DeepMind Blog", url: "https://deepmind.google/blog/rss.xml", max: 3, weight: 3}
+      - {name: "Hugging Face Blog", url: "https://huggingface.co/blog/feed.xml", max: 3, weight: 2}
+      - {name: "NVIDIA Blog", url: "https://blogs.nvidia.com/feed/", max: 3, weight: 1}
+      - {name: "The Verge AI", url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", max: 4, weight: 2}
+      - {name: "TechCrunch AI", url: "https://techcrunch.com/category/artificial-intelligence/feed/", max: 4, weight: 2}
+      - {name: "MIT News AI", url: "https://news.mit.edu/rss/topic/artificial-intelligence2", max: 3, weight: 2}
+      - {name: "arXiv cs.AI(新着論文・平日のみ)", url: "https://rss.arxiv.org/rss/cs.AI", max: 3, weight: 1}
+
+  - id: bio
+    title: "🧬 生命科学・医療"
+    feeds:
+      - {name: "STAT News", url: "https://www.statnews.com/feed/", max: 5, weight: 3}
+      - {name: "Nature Biotechnology", url: "https://www.nature.com/nbt.rss", max: 3, weight: 3}
+      - {name: "Nature Medicine", url: "https://www.nature.com/nm.rss", max: 3, weight: 3}
+      - {name: "Fierce Biotech", url: "https://www.fiercebiotech.com/rss/xml", max: 4, weight: 2}
+      - {name: "GEN(遺伝子工学ニュース)", url: "https://www.genengnews.com/feed/", max: 3, weight: 2}
+
+  - id: sci
+    title: "🔬 その他の先端科学・技術"
+    feeds:
+      - {name: "Nature(総合誌)", url: "https://www.nature.com/nature.rss", max: 4, weight: 2}
+      - {name: "Science News", url: "https://www.science.org/rss/news_current.xml", max: 4, weight: 2}
+      - {name: "Quanta Magazine", url: "https://www.quantamagazine.org/feed/", max: 2, weight: 2}
+      - {name: "The Economist Science & Technology", url: "https://www.economist.com/science-and-technology/rss.xml", max: 3, weight: 2}
+      - {name: "Ars Technica", url: "https://feeds.arstechnica.com/arstechnica/technology-lab", max: 3, weight: 1}
+      - {name: "ScienceDaily Top Science", url: "https://www.sciencedaily.com/rss/top/science.xml", max: 3, weight: 1}
+
+# 見出しにこれらの語を含む記事は各セクション内で上位に表示(AI・生命科学を優先)
+priority_keywords:
+  - {words: ["ai ", "a.i.", "artificial intelligence", "llm", "gpt", "gemini", "claude", "openai", "anthropic", "deepmind", "nvidia", "chip", "semiconductor", "model"], boost: 2}
+  - {words: ["gene", "genom", "crispr", "protein", "cell", "cancer", "drug", "fda", "vaccine", "clinical", "trial", "biotech", "antibod", "alzheimer", "obesity", "glp-1"], boost: 2}
+  - {words: ["fed ", "federal reserve", "ecb", "rate", "inflation", "cpi", "gdp", "jobs", "payroll", "tariff", "recession", "yield", "opec", "oil"], boost: 1}
