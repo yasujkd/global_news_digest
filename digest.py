@@ -139,11 +139,11 @@ h2{font-size:1.15rem;margin-top:1.6em;border-left:5px solid #0b57d0;padding-left
 .ai{background:#eef3fd;border-radius:8px;padding:8px 12px;white-space:pre-line;font-size:.92rem}
 .item{padding:9px 0;border-bottom:1px solid #e6e6e6}
 .item a{font-weight:600;color:#111;text-decoration:none}.item a:hover{text-decoration:underline}
-.ja{display:block;color:#0b57d0;font-size:.95rem}.src{color:#888;font-size:.78rem}
+.ja{display:block;color:#1967d2;font-size:.95rem}.src{color:#888;font-size:.78rem}
 .sum{color:#444;font-size:.86rem;margin-top:2px}.empty{color:#999;font-size:.9rem}
 .err{color:#a33;font-size:.8rem}
 @media (prefers-color-scheme:dark){body,nav{background:#141414;color:#e8e8e8}.item a{color:#f2f2f2}
-.sum{color:#bbb}.ai{background:#1d2738}.item{border-color:#333}}
+.sum{color:#bbb}.ai{background:#1d2738}.item{border-color:#333}.ja{color:#8ab4f8}}
 """
 
 
